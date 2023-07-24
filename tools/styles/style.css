@@ -13,6 +13,7 @@ body {
   /* background-color: #124779; */
   background-image: url("../images/image-1.jpg");
   height: 100vh;
+  overflow-y: hidden;
 }
 
 /* fonts */

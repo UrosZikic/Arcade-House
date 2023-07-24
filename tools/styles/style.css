@@ -29,6 +29,9 @@ a {
 p {
   font-size: 1.8rem;
 }
+ion-icon {
+  font-size: 3rem;
+}
 
 /* more font styles */
 a:link,
@@ -81,17 +84,36 @@ nav {
   align-items: center;
   padding: 1rem;
   gap: 1rem;
+
+  transition: all 4s;
 }
 
-nav a:first-child,
-nav a:nth-child(2) {
+nav a:nth-child(2),
+nav a:nth-child(4) {
   transform: translate(-1000px, 50px);
   transition: all 1s;
 }
-nav a:nth-child(4),
+nav a:nth-child(6),
 nav a:last-child {
   transform: translate(1000px, 50px);
   transition: all 1s;
+}
+
+nav p {
+  opacity: 0;
+  transition: all 6s;
+}
+/* responsive */
+nav ion-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  font-size: 4rem;
+}
+.slide-in,
+.slide-out {
+  display: none;
 }
 
 /* main */
@@ -116,9 +138,76 @@ main section h2 {
   transition: all 0.75s;
 }
 main section:first-child:hover p,
-main section:first-child:hover h2 {
+main section:first-child:hover h2,
+main section:hover ion-icon {
   color: lightgreen !important;
 }
 
-@media (max-width: 900px) {
+/*  */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main section:hover p ion-icon {
+  animation-name: rotate;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transition: all 0.75s;
+}
+
+/* query */
+@media (max-width: 750px) {
+  main section:first-child {
+    padding: 5rem;
+  }
+}
+@media (max-width: 550px) {
+  main section:first-child {
+    padding: 5rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: black;
+    z-index: 100;
+    opacity: 0;
+    transform: translateX(-300px);
+
+    transition: opacity 1s, transform 1s;
+  }
+  .slide-in,
+  .slide-out {
+    display: inline-block;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main section:first-child {
+    padding: 1rem;
+  }
+}
+@media (max-width: 410px) {
+  main section p {
+    font-size: 1.4rem;
+  }
 }

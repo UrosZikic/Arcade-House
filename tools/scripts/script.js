@@ -1,5 +1,6 @@
 const section = document.querySelector("section");
 const slideLink = document.querySelectorAll(".slide");
+const dot = document.querySelectorAll(".dot");
 
 function slideIn() {
   section.style.transform = "translate(0%)";
@@ -7,6 +8,8 @@ function slideIn() {
 
   setTimeout(() => {
     slideLink.forEach((link) => (link.style.transform = "translate(0px, 0px)"));
+    dot.forEach((dot) => (dot.style.opacity = "1"));
+    dot.forEach((dot) => (dot.style.opacity = "1"));
   }, 1000);
 }
 
@@ -36,13 +39,13 @@ function timerFunction() {
     if (secondsLeft > 0) {
       secondsLeft--;
     } else {
-      seconds = 59;
+      secondsLeft = 59;
       minutesLeft--;
     }
     if (minutesLeft == 0) {
       hoursLeft--;
       minutesLeft = 59;
-      seconds = 59;
+      secondsLeft = 59;
     }
     if (hoursLeft == 0 && daysLeft !== 0) {
       daysLeft--;
@@ -65,3 +68,25 @@ const header = document.querySelector("header");
 setTimeout(() => {
   header.style.transform = "translateY(0px)";
 }, 500);
+
+// slider-nav
+const navigation = document.querySelector("nav");
+const sliderIn = document.querySelector(".slide-in");
+const sliderOut = document.querySelector(".slide-out");
+
+sliderIn.onclick = () => {
+  navigation.style.display = "flex";
+  setTimeout(() => {
+    navigation.style.opacity = "1";
+    navigation.style.transform = "translateX(0px)";
+  }, 50);
+};
+
+sliderOut.onclick = () => {
+  navigation.style.transform = "translateX(-300px)";
+  navigation.style.opacity = "0";
+
+  setTimeout(() => {
+    navigation.style.display = "none";
+  }, 4000);
+};

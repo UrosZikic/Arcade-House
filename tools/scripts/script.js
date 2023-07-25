@@ -2,6 +2,10 @@ const section = document.querySelector("section");
 const slideLink = document.querySelectorAll(".slide");
 const dot = document.querySelectorAll(".dot");
 
+// page links
+const entertainment = document.querySelector(".entertainment");
+//
+
 function slideIn() {
   section.style.transform = "translate(0%)";
   slideLink.forEach((link) => (link.style.transform = "translate(0px, 50px)"));
@@ -35,25 +39,25 @@ function timerFunction() {
   let minutesLeft = 60 - minutes;
   let secondsLeft = 60 - seconds;
 
-  setInterval(() => {
-    if (secondsLeft > 0) {
-      secondsLeft--;
-    } else {
-      secondsLeft = 59;
-      minutesLeft--;
-    }
-    if (minutesLeft == 0) {
-      hoursLeft--;
-      minutesLeft = 59;
-      secondsLeft = 59;
-    }
-    if (hoursLeft == 0 && daysLeft !== 0) {
-      daysLeft--;
-      hoursLeft = 23;
-      minutesLeft = 59;
-      secondsLeft = 59;
-    }
-  }, 1000);
+  // setInterval(() => {
+  if (secondsLeft > 0) {
+    secondsLeft--;
+  } else {
+    secondsLeft = 59;
+    minutesLeft--;
+  }
+  if (minutesLeft == 0) {
+    hoursLeft--;
+    minutesLeft = 59;
+    secondsLeft = 59;
+  }
+  if (hoursLeft == 0 && daysLeft !== 0) {
+    daysLeft--;
+    hoursLeft = 23;
+    minutesLeft = 59;
+    secondsLeft = 59;
+  }
+  // }, 1000);
 
   timer.innerHTML = ` Days ${daysLeft} : Hours ${hoursLeft} : Minutes ${minutesLeft} : Seconds ${secondsLeft}`;
 }
@@ -89,4 +93,20 @@ sliderOut.onclick = () => {
   setTimeout(() => {
     navigation.style.display = "none";
   }, 4000);
+};
+
+// curtain
+
+const curtainLeft = document.querySelector(".curtain-left");
+const curtainRight = document.querySelector(".curtain-right");
+
+const infoLink = document.querySelector(".info-link");
+
+infoLink.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    entertainment.click();
+  }, 1000);
 };

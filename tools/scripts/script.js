@@ -141,3 +141,9 @@ infoLink.onclick = () => {
     entertainment.click();
   }, 1000);
 };
+
+function removeCurtain() {
+  curtainLeft.style.right = "100%";
+  curtainRight.style.left = "100%";
+}
+window.addEventListener("load", removeCurtain);

@@ -35,10 +35,10 @@ function timerFunction() {
   const seconds = time.getSeconds();
 
   let daysLeft = dayMonth[month] - day;
-  let hoursLeft = 24 - hours;
+  let hoursLeft = 24 - (hours + 1);
   let minutesLeft = 60 - minutes;
   let secondsLeft = 60 - seconds;
-
+  console.log(hours);
   // setInterval(() => {
   if (secondsLeft > 0) {
     secondsLeft--;
@@ -78,6 +78,32 @@ const navigation = document.querySelector("nav");
 const sliderIn = document.querySelector(".slide-in");
 const sliderOut = document.querySelector(".slide-out");
 
+function widthChange() {
+  if (document.body.offsetWidth > 550) {
+    navigation.style.justifyContent = "row";
+    navigation.style.position = "unset";
+    navigation.style.transform = "translateX(0px)";
+    navigation.style.top = "unset";
+    navigation.style.left = "unset";
+    navigation.style.right = "unset";
+    navigation.style.bottom = "unset";
+    navigation.style.display = "flex";
+    navigation.style.opacity = "1";
+    navigation.style.transition = "1s";
+  } else {
+    navigation.style.justifyContent = "column";
+    navigation.style.position = "fixed";
+    navigation.style.transform = "translateX(-300px)";
+    navigation.style.top = "0";
+    navigation.style.left = "0";
+    navigation.style.right = "unset";
+    navigation.style.bottom = "0";
+    navigation.style.transition = "1s";
+  }
+}
+
+window.addEventListener("resize", widthChange);
+
 sliderIn.onclick = () => {
   navigation.style.display = "flex";
   setTimeout(() => {
@@ -90,17 +116,22 @@ sliderOut.onclick = () => {
   navigation.style.transform = "translateX(-300px)";
   navigation.style.opacity = "0";
 
-  setTimeout(() => {
-    navigation.style.display = "none";
-  }, 4000);
+  // setTimeout(() => {
+  //   navigation.style.display = "none";
+  // }, 4000);
 };
 
 // curtain
 
 const curtainLeft = document.querySelector(".curtain-left");
 const curtainRight = document.querySelector(".curtain-right");
-
 const infoLink = document.querySelector(".info-link");
+
+function removeCurtain() {
+  curtainLeft.style.right = "100%";
+  curtainRight.style.left = "100%";
+}
+window.addEventListener("load", removeCurtain);
 
 infoLink.onclick = () => {
   curtainLeft.style.right = "50%";
@@ -110,9 +141,3 @@ infoLink.onclick = () => {
     entertainment.click();
   }, 1000);
 };
-
-function removeCurtain() {
-  curtainLeft.style.right = "100%";
-  curtainRight.style.left = "100%";
-}
-window.addEventListener("load", removeCurtain);

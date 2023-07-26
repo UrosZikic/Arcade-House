@@ -116,3 +116,8 @@ function removeCurtain() {
   curtainRight.style.left = "100%";
 }
 window.addEventListener("load", removeCurtain);
+
+document.addEventListener("DOMContentLoaded", function () {
+ curtainLeft.style.right = "100%";
+  curtainRight.style.left = "100%";
+});

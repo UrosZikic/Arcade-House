@@ -2,8 +2,10 @@ const section = document.querySelector("section");
 const slideLink = document.querySelectorAll(".slide");
 const dot = document.querySelectorAll(".dot");
 
-// page links
+// page button-links
 const entertainment = document.querySelector(".entertainment");
+//page links-hidden
+const entertainmentLink = document.querySelector(".entertainmentLink");
 //
 
 function slideIn() {
@@ -127,6 +129,21 @@ const curtainLeft = document.querySelector(".curtain-left");
 const curtainRight = document.querySelector(".curtain-right");
 const infoLink = document.querySelector(".info-link");
 
+// default behavior
+window.addEventListener("load", removeCurtain);
+// /////////////////////////////////////////////
+
+// button-link connect
+entertainment.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    entertainmentLink.click();
+  }, 1000);
+};
+
+//
 function removeCurtain() {
   curtainLeft.style.right = "100%";
   curtainRight.style.left = "100%";

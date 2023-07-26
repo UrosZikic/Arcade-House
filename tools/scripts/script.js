@@ -100,6 +100,17 @@ sliderOut.onclick = () => {
 const curtainLeft = document.querySelector(".curtain-left");
 const curtainRight = document.querySelector(".curtain-right");
 
+function removeCurtain() {
+  curtainLeft.style.right = "100%";
+  curtainRight.style.left = "100%";
+}
+window.addEventListener("load", removeCurtain);
+
+document.addEventListener("DOMContentLoaded", function () {
+ curtainLeft.style.right = "100%";
+  curtainRight.style.left = "100%";
+});
+
 const infoLink = document.querySelector(".info-link");
 
 infoLink.onclick = () => {
@@ -111,13 +122,4 @@ infoLink.onclick = () => {
   }, 1000);
 };
 
-function removeCurtain() {
-  curtainLeft.style.right = "100%";
-  curtainRight.style.left = "100%";
-}
-window.addEventListener("load", removeCurtain);
 
-document.addEventListener("DOMContentLoaded", function () {
- curtainLeft.style.right = "100%";
-  curtainRight.style.left = "100%";
-});

@@ -34,6 +34,10 @@ function removeCurtain() {
     // padLeft.style.left = "unset";
     // padRight.style.right = "unset";
   }, 1000);
+
+  setTimeout(() => {
+    document.querySelector("body").style.overflow = "scroll";
+  }, 1500);
 }
 
 window.addEventListener("load", removeCurtain);
@@ -85,30 +89,81 @@ class Arcade {
   // }
 }
 
-const gameboy = new Arcade("Gameboy", 15, "image-2.jpg");
-const pinball = new Arcade("Pinball", 10, "image-3.jpg");
-const pacman = new Arcade("Pac-man", 20, "image-4.jpg");
-const donkeyKong = new Arcade("Donkey Kong", 30, "image-5.jpg");
+const gameboy = new Arcade("Virtual Reality", 15, "image-2.jpg");
+const pinball = new Arcade("Sports", 10, "image-3.jpg");
+const pacman = new Arcade("Consoles", 20, "image-4.jpg");
+const donkeyKong = new Arcade("Arcade machines", 30, "image-6.jpg");
+const x = new Arcade("Virtual Reality", 15, "image-7.jpg");
+const y = new Arcade("Sports", 10, "image-8.jpg");
+const z = new Arcade("Consoles", 20, "image-9.jpg");
+const donkeyKongs = new Arcade("Arcade machines", 30, "image-5.jpg");
+const a = new Arcade("Virtual Reality", 15, "image-10.jpg");
+const b = new Arcade("Sports", 10, "image-11.jpg");
+const c = new Arcade("Consoles", 20, "image-12.jpg");
+const d = new Arcade("Arcade machines", 30, "image-5.jpg");
 
-let products = [gameboy, pinball, pacman, donkeyKong];
-
-// const nameOne = document.querySelector(".name-one");
-// nameOne.innerHTML = products[0].product;
-
-// const nameTwo = document.querySelector(".name-two");
-// nameTwo.innerHTML = products[1].product;
+let products = [
+  gameboy,
+  pinball,
+  pacman,
+  donkeyKong,
+  x,
+  y,
+  z,
+  donkeyKongs,
+  a,
+  b,
+  c,
+  d,
+];
 
 let section = document.querySelector("section");
 
 for (let i = 0; i < products.length; i++) {
   let html = `
-  <img src="tools/images/${products[i].picture}" alt="product-image"/>
-  <p>${products[i].product}</p>
-  <p>${products[i].price}$</p>
+  <img src="tools/images/${products[i].picture}" class="image-${i}" alt="product-image"/>
 `;
   let productContainer = document.createElement("div");
   productContainer.innerHTML = html;
 
-  // Append the newly created DOM element to the section
   section.appendChild(productContainer);
 }
+
+// article
+
+let article = ` Embrace the golden era of gaming as we proudly showcase a delightful
+collection of retro classics like Pac-Man, Donkey Kong, and more.
+Immerse yourself in pixelated adventures, relive the thrill of high
+scores, and challenge your skills to conquer these beloved legends!`;
+
+let splitArticle = article.split("");
+
+let articleHeading = document.querySelector(".article-heading");
+
+setTimeout(function executeArticle() {
+  const intervalArticle = setInterval(add, 50);
+  let counter = 0;
+  function add() {
+    articleHeading.innerHTML += splitArticle[counter];
+    counter++;
+
+    if (counter == splitArticle.length) {
+      clearInterval(intervalArticle);
+    }
+  }
+}, 2000);
+
+console.log(splitArticle.length);
+
+const header = document.querySelector("header");
+
+setTimeout(() => {
+  header.style.transform = "translateY(0px)";
+}, 500);
+
+// test
+const imageOne = document.querySelector(".image-1");
+
+imageOne.onclick = () => {
+  imageOne.style.height = "50%";
+};

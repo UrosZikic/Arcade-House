@@ -192,8 +192,9 @@ section {
 section div img {
   width: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   height: 100%;
+  aspect-ratio: 4/3;
 }
 
 /* query */

@@ -1,7 +1,7 @@
 // slider-nav
-
+// const navigation = document.querySelector("nav");
 function widthChange() {
-  if (document.body.offsetWidth > 550) {
+  if (document.body.offsetWidth > 568) {
     navigation.style.justifyContent = "row";
     navigation.style.position = "unset";
     navigation.style.transform = "translateX(0px)";
@@ -41,4 +41,50 @@ sliderOut.onclick = () => {
   // setTimeout(() => {
   //   navigation.style.display = "none";
   // }, 4000);
+};
+// x //
+// page button-links
+const home = document.querySelector(".home");
+const entertainment = document.querySelector(".entertainment");
+const about = document.querySelector(".about");
+const contact = document.querySelector(".contact");
+//page links-hidden
+const homeLink = document.querySelector(".homeLink");
+const entertainmentLink = document.querySelector(".entertainmentLink");
+const aboutLink = document.querySelector(".aboutLink");
+const contactLink = document.querySelector(".contactLink");
+//
+
+// button-link connect
+home.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    homeLink.click();
+  }, 900);
+};
+entertainment.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    entertainmentLink.click();
+  }, 1000);
+};
+about.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    aboutLink.click();
+  }, 1000);
+};
+contact.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
+
+  setTimeout(() => {
+    contactLink.click();
+  }, 1000);
 };

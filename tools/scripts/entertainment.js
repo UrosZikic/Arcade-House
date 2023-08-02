@@ -1,3 +1,15 @@
+// Scroll to the top of the page
+window.addEventListener("beforeunload", scrollUp);
+
+function scrollUp() {
+  window.scrollTo(0, 0);
+}
+
+const scroller = document.querySelector(".scroller");
+scroller.onclick = () => {
+  scrollUp();
+};
+
 // slider-nav
 const navigation = document.querySelector("nav");
 const sliderIn = document.querySelector(".slide-in");
@@ -100,7 +112,15 @@ const donkeyKongs = new Arcade("Arcade machines", 30, "image-5.jpg");
 const a = new Arcade("Virtual Reality", 15, "image-10.jpg");
 const b = new Arcade("Sports", 10, "image-11.jpg");
 const c = new Arcade("Consoles", 20, "image-12.jpg");
-const d = new Arcade("Arcade machines", 30, "image-5.jpg");
+const d = new Arcade("Arcade machines", 30, "image-1.jpg");
+const e = new Arcade("Virtual Reality", 15, "image-13.jpg");
+const f = new Arcade("Sports", 10, "image-14.jpg");
+const g = new Arcade("Consoles", 20, "image-15.jpg");
+const h = new Arcade("Arcade machines", 30, "image-16.jpg");
+const i = new Arcade("Consoles", 20, "image-17.jpg");
+const j = new Arcade("Arcade machines", 30, "image-18.jpg");
+const k = new Arcade("Consoles", 20, "image-19.jpg");
+const l = new Arcade("Arcade machines", 30, "image-20.jpg");
 
 let products = [
   gameboy,
@@ -115,6 +135,14 @@ let products = [
   b,
   c,
   d,
+  e,
+  f,
+  g,
+  h,
+  i,
+  j,
+  k,
+  l,
 ];
 
 let section = document.querySelector("section");
@@ -153,17 +181,8 @@ setTimeout(function executeArticle() {
   }
 }, 2000);
 
-console.log(splitArticle.length);
-
 const header = document.querySelector("header");
 
 setTimeout(() => {
   header.style.transform = "translateY(0px)";
 }, 500);
-
-// test
-const imageOne = document.querySelector(".image-1");
-
-imageOne.onclick = () => {
-  imageOne.style.height = "50%";
-};

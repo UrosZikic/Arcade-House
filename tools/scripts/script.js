@@ -2,12 +2,6 @@ const section = document.querySelector("section");
 const slideLink = document.querySelectorAll(".slide");
 const dot = document.querySelectorAll(".dot");
 
-// page button-links
-const entertainment = document.querySelector(".entertainment");
-//page links-hidden
-const entertainmentLink = document.querySelector(".entertainmentLink");
-//
-
 function slideIn() {
   section.style.transform = "translate(0%)";
   slideLink.forEach((link) => (link.style.transform = "translate(0px, 50px)"));
@@ -40,7 +34,7 @@ function timerFunction() {
   let hoursLeft = 24 - (hours + 1);
   let minutesLeft = 60 - minutes;
   let secondsLeft = 60 - seconds;
-  console.log(hours);
+
   // setInterval(() => {
   if (secondsLeft > 0) {
     secondsLeft--;
@@ -89,16 +83,6 @@ const infoLink = document.querySelector(".info-link");
 // default behavior
 window.addEventListener("load", removeCurtain);
 // /////////////////////////////////////////////
-
-// button-link connect
-entertainment.onclick = () => {
-  curtainLeft.style.right = "50%";
-  curtainRight.style.left = "50%";
-
-  setTimeout(() => {
-    entertainmentLink.click();
-  }, 1000);
-};
 
 //
 function removeCurtain() {

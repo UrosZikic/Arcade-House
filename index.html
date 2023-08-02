@@ -11,26 +11,24 @@
     />
     <title>Document</title>
     <link rel="stylesheet" href="tools/styles/style.css" />
+    <link rel="stylesheet" href="tools/styles/footer.css">
   </head>
   <body>
     <header>
       <a href="index.html">
       <h1 class="logo">Arcade &#x2022; House</h1></a>
-      <h1 className="social-media">
-        <a href="#">Github</a>
-        <a href="#">Linkedin</a>
-      </h1>
+     
       <ion-icon name="grid-outline" class="slide-in"></ion-icon>
     </header>
     <nav>
       <ion-icon name="return-up-back-outline" class="slide-out"></ion-icon>
-      <a href="#" class="slide first">About</a>
+      <button class="slide home">Home</button>
       <p class="dot">&#x2022;</p>
       <button class="slide entertainment">Entertainment</button>
       <p class="dot">&#x2022;</p>
-      <a href="#" class="slide">Community</a>
+      <button class="slide about">About</button>
       <p class="dot">&#x2022;</p>
-      <a href="#" class="slide">Career</a>
+      <button class="slide contact">Contact</button>
     </nav>
     <main>
       <section class="section-info">
@@ -55,17 +53,21 @@
           <!-- <ion-icon name="game-controller-outline" class="pad-right"></ion-icon> -->
         </div>
 
+       
+
         <!-- links -->
         <div class="links-hidden">
-        <a href="entertainment.html" class="aboutLink">1</a>
+        <a href="index.html" class="homeLink">1</a>
         <a href="entertainment.html" class="entertainmentLink">1</a>
-        <a href="entertainment.html" class="communityLink">1</a>
-        <a href="entertainment.html" class="carrerLink">1</a>
-        <div></div>
+        <a href="about.html" class="aboutLink">1</a>
+        <a href="contact.html" class="contactLink">1</a>
+        </div>
     </main>
+    <footer></footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="tools/scripts/script.js"></script>
     <script src="tools/scripts/navigation.js"></script>
+    <script src="tools/scripts/footer.js"></script>
   </body>
 </html>

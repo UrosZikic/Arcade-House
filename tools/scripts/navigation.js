@@ -65,8 +65,12 @@ home.onclick = () => {
   }, 900);
 };
 entertainment.onclick = () => {
-  curtainLeft.style.right = "50%";
-  curtainRight.style.left = "50%";
+  window.scrollTo(0, 0);
+
+  setTimeout(() => {
+    curtainLeft.style.right = "50%";
+    curtainRight.style.left = "50%";
+  }, 200);
 
   setTimeout(() => {
     entertainmentLink.click();

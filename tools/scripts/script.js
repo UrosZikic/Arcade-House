@@ -92,6 +92,7 @@ function removeCurtain() {
 window.addEventListener("load", removeCurtain);
 
 infoLink.onclick = () => {
+  window.scrollTo(0, 0);
   curtainLeft.style.right = "50%";
   curtainRight.style.left = "50%";
 
@@ -105,3 +106,5 @@ function removeCurtain() {
   curtainRight.style.left = "100%";
 }
 window.addEventListener("load", removeCurtain);
+
+// taken from entertainment.js

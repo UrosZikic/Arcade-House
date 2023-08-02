@@ -93,6 +93,7 @@ window.addEventListener("load", removeCurtain);
 
 infoLink.onclick = () => {
   window.scrollTo(0, 0);
+  document.body.style.overflow = "hidden";
   curtainLeft.style.right = "50%";
   curtainRight.style.left = "50%";
 

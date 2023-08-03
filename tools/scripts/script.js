@@ -32,17 +32,17 @@ function timerFunction() {
 
   let daysLeft = dayMonth[month] - day;
   let hoursLeft = 24 - (hours + 1);
-  let minutesLeft = 60 - minutes;
-  let secondsLeft = 60 - seconds;
+  let minutesLeft = 60 - minutes - 1;
+  let secondsLeft = 60 - seconds - 1;
 
   // setInterval(() => {
-  if (secondsLeft > 0) {
+  if (secondsLeft > 1) {
     secondsLeft--;
   } else {
     secondsLeft = 59;
     minutesLeft--;
   }
-  if (minutesLeft == 0) {
+  if (minutesLeft == 1) {
     hoursLeft--;
     minutesLeft = 59;
     secondsLeft = 59;

@@ -13,6 +13,7 @@ html {
 body {
   /* background-color: #124779; */
   background-image: url("../images/image-1.jpg");
+  background-size: cover;
   /* height: 100vh; */
   overflow-x: hidden !important;
 }
@@ -124,14 +125,17 @@ nav ion-icon {
 .slide-out {
   display: none;
 }
+nav button {
+  cursor: pointer;
+}
 
 /* main */
 main {
   background-color: transparent;
-  margin: 10rem 0;
+  margin: 8rem 0;
 }
 .section-info {
-  padding: 10rem;
+  padding: 2rem 10rem;
   line-height: 1.5;
   background-color: rgba(0, 0, 0, 0.9);
 
@@ -223,12 +227,25 @@ main section:hover p .cog {
 /* query */
 @media (max-width: 750px) {
   .section-info {
-    padding: 5rem;
+    padding: 1rem;
+  }
+  .info-text {
+    font-size: 1.6rem;
+  }
+  .section-info button {
+    font-size: 1.6rem;
+  }
+  .section-info h2 {
+    font-size: 2rem;
   }
 }
 @media (max-width: 550px) {
-  .section-info {
-    padding: 2rem;
+  .info-text {
+    font-size: 1.4rem;
+  }
+
+  .section-info button {
+    font-size: 1.4rem;
   }
 
   nav {
@@ -256,10 +273,6 @@ main section:hover p .cog {
   header {
     display: flex;
     flex-direction: column;
-  }
-
-  .section-info {
-    padding: 1rem;
   }
 }
 @media (max-width: 410px) {

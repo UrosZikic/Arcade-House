@@ -3,8 +3,8 @@
 const developer = "Uros Zikic";
 let footer = document.querySelector("footer");
 let footerHtmlContentLeft = `<p>Developed by: ${developer}</p>`;
-let footerHtmlContentCenter = ` <div class="newsletter"> <label for="email">Subscribe to our newsletter</label>  <input type="email" name="email" class="email" required placeholder="enter your email"> <button class="subscribe">Subscribe</button> <p class="sub-message"></p> </div>`;
-let footerHtmlContentRight = `<div>
+let footerHtmlContentCenter = ` <div class="newsletter"> <label for="email">Subscribe to our newsletter</label> <div><input type="email" name="email" class="email" required placeholder="enter your email"> <button class="subscribe">Subscribe</button> </div> <p class="sub-message"></p> </div>`;
+let footerHtmlContentRight = `<div class="social-media">
 <a href="https://www.linkedin.com/in/uro%C5%A1-%C5%BEiki%C4%87-78010819a/" target="_blank"> 
 <ion-icon name="logo-linkedin"></ion-icon>
 linkedin

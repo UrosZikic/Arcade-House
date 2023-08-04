@@ -76,19 +76,29 @@ entertainment.onclick = () => {
     entertainmentLink.click();
   }, 1000);
 };
+
+// Change
+const aboutModal = document.querySelector('.modal-about');
+const aboutText = document.querySelector('.about-text');
 about.onclick = () => {
-  curtainLeft.style.right = "50%";
-  curtainRight.style.left = "50%";
+aboutModal.style.transform = "translateX(0%)";
 
-  setTimeout(() => {
-    aboutLink.click();
-  }, 1000);
+  // setTimeout(() => {
+  //   aboutLink.click();
+  // }, 1000);
 };
-contact.onclick = () => {
-  curtainLeft.style.right = "50%";
-  curtainRight.style.left = "50%";
+aboutModal.addEventListener("click", (event) => {
+  if (!aboutText.contains(event.target)) {
+    aboutModal.style.transform = "translateX(100%)";
+  }
+})
 
-  setTimeout(() => {
-    contactLink.click();
-  }, 1000);
-};
+
+// contact.onclick = () => {
+//   curtainLeft.style.right = "50%";
+//   curtainRight.style.left = "50%";
+
+//   setTimeout(() => {
+//     contactLink.click();
+//   }, 1000);
+// };

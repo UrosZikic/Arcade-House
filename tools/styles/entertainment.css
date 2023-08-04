@@ -1,39 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: #daedff;
-  font-family: "Tourney", sans-serif;
-}
-
-html {
-  font-size: 62.5%;
-  z-index: 2;
-}
 body {
-  /* background-color: #124779; */
-  background-image: url("../images/image-20.jpg");
-  background-size: cover;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-/* fonts */
-h1 {
-  font-size: 3.2rem;
-}
-h2 {
-  font-size: 2.8rem;
-}
-
-a {
-  font-size: 2rem;
-}
-p {
-  font-size: 1.8rem;
-}
-ion-icon {
-  font-size: 3rem;
+  overflow-y: scroll;
 }
 
 /* more font styles */

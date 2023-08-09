@@ -94,11 +94,11 @@ aboutModal.addEventListener("click", (event) => {
 })
 
 
-// contact.onclick = () => {
-//   curtainLeft.style.right = "50%";
-//   curtainRight.style.left = "50%";
+contact.onclick = () => {
+  curtainLeft.style.right = "50%";
+  curtainRight.style.left = "50%";
 
-//   setTimeout(() => {
-//     contactLink.click();
-//   }, 1000);
-// };
+  setTimeout(() => {
+    contactLink.click();
+  }, 1000);
+};
